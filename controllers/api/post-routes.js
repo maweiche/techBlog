@@ -12,3 +12,5 @@ const withAuth = require('../../utils/auth');
 //UPDATE a post
 
 //DELETE a post
+
+//export
