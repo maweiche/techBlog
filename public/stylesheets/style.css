@@ -1,0 +1,106 @@
+:root {
+    --primary-color: rgb(10, 54, 10);
+    --primary-hover: gold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, html, input, textarea {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #323;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color .1s;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.homepage {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 20px;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+.blog-title {
+    color: var(--primary-hover);
+    font-size: 25px;
+    margin: 25px;
+    padding: 10px;
+}
+
+.create-btn {
+    color: white;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.create-btn:hover {
+    color: white;
+}
+
+button {
+    background-color: var(--primary-color);
+    border: 0;
+    padding: 1%;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: var(--primary-hover);
+}
+
+.post-list {
+    margin: 0;
+    padding: 0;
+}
+
+textarea, input {
+    padding: .5%;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+
+textarea {
+    min-width: 40%;
+    min-height: 100px;
+}
+
+form > div {
+    margin-bottom: 2%;
+}
+
+form label {
+    display: block;
+}
+
+header {
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1%;
+}
+
+header h1 {
+    font-size: 1em;
+}
