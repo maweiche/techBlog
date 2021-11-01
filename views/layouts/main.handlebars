@@ -2,6 +2,38 @@
 <html lang="en">
 
  <head>
-     <meta charset="UTF-8"
+     <meta charset="UTF-8">
+     <meta name ="viewport" content="width=device-width, intitial-scale=1.0">
+     <title>The Tech Blog</title>
+     <link rel="stylesheet" href="/public/stylesheets/style.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  </head>   
+
+ <body>
+     <div class="wrapper">
+         <header>
+             <h1>
+                 <p class="blog-title">The Tech Blog <i class="large material-icons">laptop_mac</i></p>
+             </h1>
+
+             <a href="/" class="homepage">Homepage</a>
+             <a href="/dashboard" class="dashboard">Dashboard</a>
+             <button id="logout" class="btn-no-style">Logout</button>
+             {{else}}
+             <a href="/" class="homepage">Homepage</a>
+             <a href="/login">Login</a>
+             {{if}}
+             </nav>
+             </header>
+             <main>
+                 {{{ body }}}
+             </main>
+            </div>
+
+
+            {{#if loggedIN}}
+            <script src="/public/javascript/logout.js"></script>
+            {{/if}}
+ </body>
+ 
 </html>
