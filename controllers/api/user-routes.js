@@ -1,20 +1,16 @@
 const router = require('express').Router();
-const { User, Post, Vote, Comment } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
 //GET /api/users
-router.get('/', (rex, res) => {
+router.get('/', (req, res) => {
     //access user model with findAll
     User.findAll({
         attributes: { exclude: ['password']},
-    }).then(dbCommentData => {
-        if(!dbCommentData) {
-            res.status(404).json({ message: 'No comment found with matching id'});
-            return;
-        }
-        res.json(dbCommentData);
-    }).catch(err => {
+    })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
@@ -42,13 +38,15 @@ router.get('/:id', (req, res) => {
             }
         }    
         ]
-        }).then(dbCommentData => {
-            if(!dbCommentData) {
-                res.status(404).json({ message: 'No comment found with matching id'});
+        })
+        .then(dbUserData => {
+            if(!dbUserData) {
+                res.status(404).json({ message: 'No user found with matching id'});
                 return;
             }
-            res.json(dbCommentData);
-        }).catch(err => {
+            res.json(dbUserData);
+        })
+        .catch(err => {
             console.log(err);
             res.status(500).json(err);
     });

@@ -104,3 +104,7 @@ header {
 header h1 {
     font-size: 1em;
 }
+
+.wrapper {
+    background-color: brown;
+}
