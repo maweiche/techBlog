@@ -113,7 +113,7 @@ router.post('/logout', withAuth, (req, res) => {
 
 //update user
 router.put('/:id', withAuth, (req, res) => {
-    User.update(req.body {
+    User.update(req.body, {
         individualHooks: true,
         where: {
             id: req.params.id
