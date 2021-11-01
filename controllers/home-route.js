@@ -54,7 +54,7 @@ router.get('/signup', (req, res) => {
 });
 
 //render one post to single post page
-router.get('/[ost/:id', (req, res) => {
+router.get('/post/:id', (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
