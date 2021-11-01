@@ -17,12 +17,12 @@
              </h1>
 
              <a href="/" class="homepage">Homepage</a>
-             <a href="/dashboard" class="dashboard">Dashboard</a>
+             <a href="/dashboard">Dashboard</a>
              <button id="logout" class="btn-no-style">Logout</button>
-             {{!-- {{else}} --}}
+             {{else}}
              <a href="/" class="homepage">Homepage</a>
              <a href="/login">Login</a>
-             {{if}}
+             {{/if}}
              </nav>
              </header>
              <main>
@@ -31,7 +31,7 @@
             </div>
 
 
-            {{#if loggedIN}}
+            {{#if loggedIn}}
             <script src="/public/javascript/logout.js"></script>
             {{/if}}
  </body>
