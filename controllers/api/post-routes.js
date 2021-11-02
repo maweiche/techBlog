@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
-const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
+const sequelize = require('../../config/connection');
 
 //GET all posts
 router.get('/', (req, res) => {
@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
 });
 
 //GET single post by id
-router.get('/id', (req, res) => {
+router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
@@ -47,20 +47,26 @@ router.get('/id', (req, res) => {
                 ],
                 include: [
                     {
+                        model: User,
+                        attributes: ['username']
+                    },
+                    {
                         model: Comment,
                         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                         include: {
                             model: User,
                             attributes: ['username']
                         }
-                    },
-                    {
-                        model: User,
-                        attributes: ['username']
-                    },
+                    }
                 ]
     })
-    .then(dbPostData => res.json(dbPostData))
+    .then(dbPostData => {
+        if(!dbPostData){
+            res.status(404).json({ message: 'No post found with matching id'});
+            return;
+        }
+        res.json(dbPostData);
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
