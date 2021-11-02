@@ -12,7 +12,7 @@ body, html, input, textarea {
     padding: 0;
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: rgb(155, 0, 0);
+    background-color: rgb(155, 0, 0);
 }
 
 a {
@@ -34,7 +34,7 @@ a:hover {
 }
 
 .blog-title {
-    color: var(--primary-color);
+    color: var(--primary-hover);
     font-size: 25px;
     margin: 25px;
     padding: 10px;
@@ -62,6 +62,7 @@ button {
 
 button:hover{
     background-color: var(--primary-hover);
+    color: var(--primary-color);
 }
 
 .post-list {
@@ -94,7 +95,7 @@ form label {
 }
 
 header {
-    border-bottom: 1px solid rgb(155, 0, 0);
+    border-bottom: 1px solid grey;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -171,7 +172,7 @@ main{
 }
 
 .comment:nth-child(odd) {
-    background-color: beige;
+    background-color: white;
 }
 
 .comment .meta {
