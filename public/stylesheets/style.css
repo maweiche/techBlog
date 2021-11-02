@@ -1,6 +1,6 @@
 :root {
-    --primary-color: rgb(10, 54, 10);
-    --primary-hover: gold;
+    --primary-color: gold;
+    --primary-hover: white;
 }
 
 * {
@@ -12,7 +12,7 @@ body, html, input, textarea {
     padding: 0;
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #323;
+    color: rgb(216, 216, 216);
 }
 
 a {
@@ -34,7 +34,7 @@ a:hover {
 }
 
 .blog-title {
-    color: var(--primary-hover);
+    color: var(--primary-color);
     font-size: 25px;
     margin: 25px;
     padding: 10px;
@@ -106,5 +106,92 @@ header h1 {
 }
 
 .wrapper {
-    background-color: brown;
+    width: 100%;
+    min-height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+    padding:2% 4%;
+}
+
+.btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 100%;
+    font-weight: bold;
+    transition: color .1s;
+    margin-left: 16px;
+}
+
+.btn-no-style:hover {
+    background: none;
+    color: var(--primary-color);
+}
+
+.delete-post-btn {
+    background-color: red ;
+}
+
+.delete-post-btn:hover {
+    background-color: yellow;
+}
+
+.post {
+    margin-bottom: 3%;
+    line-height: 125%;
+}
+
+.post .title span {
+    font-style: italic;
+    font-size: 90%;
+    color: chartreuse;
+
+}
+.edit-link {
+    display: block;
+    margin: -1.5% 0 2% 0;
+}
+
+.comment-form {
+    margin-bottom: 5%;
+}
+
+.comment {
+    padding: 1%;
+    margin-bottom: 1%;
+}
+
+.comment:nth-child(odd) {
+    background-color: beige;
+}
+
+.comment .meta {
+    font-size: 90%;
+    margin-bottom: .5%;
+    opacity: .8;
+}
+
+.new-post-form input {
+    width: 300 px;
+}
+
+.edit-post-form {
+    margin-bottom: 5%;
+}
+
+footer {
+    border-top: 1px solid beige;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    font-size: 110%;
 }
